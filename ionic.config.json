@@ -1,5 +1,7 @@
 {
   "name": "mgasMobile",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
