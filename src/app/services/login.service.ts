@@ -12,7 +12,7 @@ import { Storage } from '@ionic/storage';
   providedIn: 'root'
 })
 export class LoginService {
-  private loginurl = 'https://cmg.mexicanadegas.com.mx:8190/webapp/rest/webappService/login?usr=';
+  private loginurl = 'https://rap-pgs.mexicanadegas.com.mx/webapp/rest/webappService/login?usr=';
   constructor(
     private http: HttpClient,
     private networkService: NetworkService,

@@ -1,16 +1,16 @@
-import { Component, OnInit, AfterViewInit, ViewChild  } from '@angular/core';
-import { Platform } from '@ionic/angular';
-import { take, map, tap, takeUntil } from 'rxjs/operators';
-import { zip, of, Subject } from 'rxjs';
+import { Acta, Detalle, DetalleImg, LocalActa } from '../models/acta-model';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Calle, Ciudad, Colonia } from '../models/locations-model';
+import { Subject, of, zip } from 'rxjs';
+import { map, take, takeUntil, tap } from 'rxjs/operators';
 
-import { Acta, LocalActa, Detalle, DetalleImg } from '../models/acta-model';
 import { ActaService } from '../services/acta.service';
 import { LocationsService } from '../services/locations.service';
-import { OfflineManagerService } from '../services/offline-manager.service';
 import { LoginService } from '../services/login.service';
-import { Ciudad, Colonia, Calle } from '../models/locations-model';
-import { ToastController } from '@ionic/angular';
 import { NetworkService } from '../services/network.service';
+import { OfflineManagerService } from '../services/offline-manager.service';
+import { Platform } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-landing',
@@ -134,7 +134,7 @@ export class LandingScreenComponent implements OnInit, AfterViewInit {
   }
 
   public capturarActaOption(): void {
-    if (this.actasArray.length > 0) {
+    if (this.actasArray && this.actasArray.length > 0) {
       this.resetLocations();
       this.isPendingActa = false;
       this.showBackBtn = true;
@@ -142,7 +142,7 @@ export class LandingScreenComponent implements OnInit, AfterViewInit {
       this.showLocationsDrops = true;
     } else {
       const toast = this.toastController.create({
-        message: `Actualmente no cuentas con ninguna acta para capturar.`,
+        message: `Actualmente no cuentas con ninguna acta para capturar o la informacion esta pendiente de cargar.`,
         duration: 2000,
         position: 'bottom'
       });

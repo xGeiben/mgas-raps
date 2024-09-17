@@ -13,9 +13,9 @@ import { Storage } from '@ionic/storage';
   providedIn: 'root'
 })
 export class LocationsService {
-  private ciudadesurl = 'https://cmg.mexicanadegas.com.mx:8190/webapp/rest/webappService/ciudades?usuarioTecnico=';
-  private coloniasurl = 'https://cmg.mexicanadegas.com.mx:8190/webapp/rest/webappService/colonias?usuarioTecnico=';
-  private callesurl = 'https://cmg.mexicanadegas.com.mx:8190/webapp/rest/webappService/calles?usuarioTecnico=';
+  private ciudadesurl = 'https://rap-pgs.mexicanadegas.com.mx/webapp/rest/webappService/ciudades?usuarioTecnico=';
+  private coloniasurl = 'https://rap-pgs.mexicanadegas.com.mx/webapp/rest/webappService/colonias?usuarioTecnico=';
+  private callesurl = 'https://rap-pgs.mexicanadegas.com.mx/webapp/rest/webappService/calles?usuarioTecnico=';
   constructor(
     private http: HttpClient,
     private networkService: NetworkService,
@@ -50,7 +50,7 @@ export class LocationsService {
       return this.getLocalColonias();
     } else {
       return this.http.get(this.coloniasurl + user).pipe(
-        timeout(3000),
+        // timeout(5000),
         map((response: ColoniaResponse) => response.dsdatos.Colonia),
         take(1),
         tap((response) => {
@@ -74,7 +74,7 @@ export class LocationsService {
       return this.getLocalCalles();
     } else {
       return this.http.get(this.callesurl + user).pipe(
-        timeout(3000),
+        // timeout(5000),
         map((response: CalleResponse) => response.dsdatos.Calle),
         take(1),
         tap((response) => {

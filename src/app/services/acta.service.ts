@@ -14,10 +14,10 @@ import { ToastController } from '@ionic/angular';
   providedIn: 'root'
 })
 export class ActaService {
-  public actaurl = 'https://cmg.mexicanadegas.com.mx:8190/webapp/rest/webappService/actas';
-  public optionsurl = 'https://cmg.mexicanadegas.com.mx:8190/webapp/rest/webappService/opciones';
-  public detalleactaurl = 'https://cmg.mexicanadegas.com.mx:8190/webapp/rest/webappService/detalle';
-  public imagenesurl = 'https://cmg.mexicanadegas.com.mx:8190/webapp/rest/webappService/fotos';
+  public actaurl = 'https://rap-pgs.mexicanadegas.com.mx/webapp/rest/webappService/actas';
+  public optionsurl = 'https://rap-pgs.mexicanadegas.com.mx/webapp/rest/webappService/opciones';
+  public detalleactaurl = 'https://rap-pgs.mexicanadegas.com.mx/webapp/rest/webappService/detalle';
+  public imagenesurl = 'https://rap-pgs.mexicanadegas.com.mx/webapp/rest/webappService/fotos';
   public user: string;
 
   constructor(
