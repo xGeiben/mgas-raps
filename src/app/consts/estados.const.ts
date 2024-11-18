@@ -2,6 +2,7 @@ export const EstadoActa = {
   canContinue: false,
   requireComment: false,
   requirePhoto: false,
+  // comment
   options : [
     { text: 'Aceptada total', value: 1, isChecked: false, canContinue: true, requirePhoto: false, requireComment: false },
     { text: 'Aceptada parcial', value: 2, isChecked: false, canContinue: true, requirePhoto: false, requireComment: false },
